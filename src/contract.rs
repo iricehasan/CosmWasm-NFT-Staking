@@ -120,8 +120,6 @@ pub fn execute_unstake(
     let staking_info = stakings_state[index as usize].clone();
     let mut staking = &mut stakings_state[index as usize];
 
-    // check if staking.nft_addr is in Config nft_addrs
-
     if staking.end_timestamp != Timestamp::from_nanos(0) {
         return Err(ContractError::AlreadyUnstaked {});
     }
